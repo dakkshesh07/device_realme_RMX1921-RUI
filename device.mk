@@ -19,7 +19,7 @@ PRODUCT_TARGET_VNDK_VERSION := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
 # Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
@@ -148,7 +148,7 @@ PRODUCT_PACKAGES += \
     vendor.oppo.hardware.biometrics.fingerprint@2.1
 
 PRODUCT_COPY_FILES += \
-    vendor/ancient/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:vendor/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    vendor/corvus/prebuilt/common/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:vendor/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 # FM
 PRODUCT_PACKAGES += \
@@ -439,7 +439,9 @@ PRODUCT_PACKAGES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
+    libdisplayconfig \
     libdisplayconfig.qti \
+    libdisplayconfig.vendor \
     libnl \
     libqdMetaData \
     libqdMetaData.system
